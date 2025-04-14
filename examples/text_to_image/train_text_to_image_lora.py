@@ -898,8 +898,7 @@ def main():
                         StableDiffusionPipeline.save_lora_weights(
                             save_directory=save_path,
                             unet_lora_layers=unet_lora_state_dict,
-                            safe_serialization=True,
-                            safety_checker=None
+                            safe_serialization=True
                         )
 
                         logger.info(f"Saved state to {save_path}")
@@ -936,8 +935,7 @@ def main():
         StableDiffusionPipeline.save_lora_weights(
             save_directory=args.output_dir,
             unet_lora_layers=unet_lora_state_dict,
-            safe_serialization=True,
-            safety_checker=None
+            safe_serialization=True
         )
 
         # Final inference
