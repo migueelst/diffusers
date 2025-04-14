@@ -899,6 +899,7 @@ def main():
                             save_directory=save_path,
                             unet_lora_layers=unet_lora_state_dict,
                             safe_serialization=True,
+                            safety_checker=None
                         )
 
                         logger.info(f"Saved state to {save_path}")
@@ -918,6 +919,7 @@ def main():
                     revision=args.revision,
                     variant=args.variant,
                     torch_dtype=weight_dtype,
+                    safety_checker=None
                 )
                 images = log_validation(pipeline, args, accelerator, epoch)
 
@@ -935,6 +937,7 @@ def main():
             save_directory=args.output_dir,
             unet_lora_layers=unet_lora_state_dict,
             safe_serialization=True,
+            safety_checker=None
         )
 
         # Final inference
@@ -945,6 +948,7 @@ def main():
                 revision=args.revision,
                 variant=args.variant,
                 torch_dtype=weight_dtype,
+                safety_checker=None
             )
 
             # load attention processors
