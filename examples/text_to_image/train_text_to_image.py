@@ -1113,6 +1113,7 @@ def main():
             unet=unet,
             revision=args.revision,
             variant=args.variant,
+            safety_checker=None
         )
         pipeline.save_pretrained(args.output_dir)
 
